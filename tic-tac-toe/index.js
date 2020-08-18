@@ -33,13 +33,15 @@ let gameboard = [[-1, -1, -1], [-1, -1, -1], [-1, -1, -1]]; // array representat
 let currentPlayer = 1; // indicates who's turn it is
 let numTurn = 0; // counts the num of turns made
 
+
+
 let pn1 = "";
 let pn2 = "";
 while (pn1 == "" || pn1 == null) {
   pn1 = prompt("What is Player 1's Name");
 }
-while (pn1 == "" || pn1 == null) {
-  pn1 = prompt("What is Player 1's Name");
+while (pn2 == "" || pn2 == null) {
+  pn2 = prompt("What is Player 2's Name");
 }
 // Populates the spaces for the gameboard
 function populateSpace() {
@@ -151,7 +153,7 @@ function reportTie() {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ player1name: pn1, score1: result1 }, { player2name: pn2, score2: result2 })
+      body: JSON.stringify({ player1name: pn1, score1: result1, player2name: pn2, score2: result2 })
     });
     const content = await rawResponse.json();
 
@@ -167,6 +169,15 @@ function reportWinner() {
   game_page.classList.add("hidden");
   let text = document.querySelector("#win-container h2");
   text.textContent = "Congrats! Player " + currentPlayer + "!";
+  let winner = currentPlayer;
+  let loser = 1;
+  result1 = "lose";
+  result2 = "win";
+  if (currentPlayer == 1) {
+    loser = 2;
+    result1 = "win";
+    result2 = "lose";
+  }
 
   (async () => {
     const rawResponse = await fetch('http://localhost:8000', {
@@ -175,10 +186,9 @@ function reportWinner() {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ playername: pn1, score: cu }, { playername: pn2, score: result2 })
+      body: JSON.stringify({ player1name: pn1, score1: result1, player2name: pn2, score2: result2 })
     });
     const content = await rawResponse.json();
-
     console.log(content);
   })();
 }
