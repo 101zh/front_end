@@ -32,24 +32,14 @@ let player2 = {
 let gameboard = [[-1, -1, -1], [-1, -1, -1], [-1, -1, -1]]; // array representation of gameboard
 let currentPlayer = 1; // indicates who's turn it is
 let numTurn = 0; // counts the num of turns made
-let won = 1;
-let loss = 2;
-let result1 = "";
-let result2 = "";
-let pl1 = 1;
-let pl2 = 2;
 
-let pn1 = toString(prompt("What is Player 1's Name"));
-if (pn1 == "" || pn1 == null) {
-  alert("Put Your Name In!!");
-  location.href = "file:///G:/hunter/tic-tac-toe/index.html";
-
+let pn1 = "";
+let pn2 = "";
+while (pn1 == "" || pn1 == null) {
+  pn1 = prompt("What is Player 1's Name");
 }
-let pn2 = toString(prompt("What is Player 2's Name"));
-if (pn2 == "" || pn2 == null) {
-  alert("Put Your Name In!!");
-  location.href = "file:///G:/hunter/tic-tac-toe/index.html";
-
+while (pn1 == "" || pn1 == null) {
+  pn1 = prompt("What is Player 1's Name");
 }
 // Populates the spaces for the gameboard
 function populateSpace() {
@@ -178,36 +168,6 @@ function reportWinner() {
   let text = document.querySelector("#win-container h2");
   text.textContent = "Congrats! Player " + currentPlayer + "!";
 
-  won = currentPlayer;
-  if (loss == currentPlayer) {
-
-    loss = 1;
-  }
-
-  if (loss == currentPlayer) {
-    loss = 2;
-  }
-  console.log(currentPlayer);
-  console.log(loss);
-  if (loss == pl1) {
-    result1 = "lose";
-  }
-
-  if (loss == pl2) {
-    result2 = "lose";
-  }
-
-  if (won == pl2) {
-    result2 = "win";
-  }
-
-  if (won == pl1) {
-    result1 = "win";
-  }
-  console.log(result2);
-  console.log(result1);
-  console.log(pl1);
-  console.log(pl2);
   (async () => {
     const rawResponse = await fetch('http://localhost:8000', {
       method: 'POST',
@@ -215,7 +175,7 @@ function reportWinner() {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ playername: pn1, score: result1 }, { playername: pn2, score: result2 })
+      body: JSON.stringify({ playername: pn1, score: cu }, { playername: pn2, score: result2 })
     });
     const content = await rawResponse.json();
 
