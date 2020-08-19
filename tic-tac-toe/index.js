@@ -32,17 +32,22 @@ let player2 = {
 let gameboard = [[-1, -1, -1], [-1, -1, -1], [-1, -1, -1]]; // array representation of gameboard
 let currentPlayer = 1; // indicates who's turn it is
 let numTurn = 0; // counts the num of turns made
-
+leaderboard = document.getElementById("leaderboard");
+leaderboard.classList.add("hidden");
+leaderboard2 = document.getElementById("leaderboard2");
+leaderboard.classList.add("hidden");
 
 
 let pn1 = "";
 let pn2 = "";
+
 while (pn1 == "" || pn1 == null) {
   pn1 = prompt("What is Player 1's Name");
 }
 while (pn2 == "" || pn2 == null) {
   pn2 = prompt("What is Player 2's Name");
 }
+
 // Populates the spaces for the gameboard
 function populateSpace() {
   let rows = document.querySelectorAll(".row")
@@ -142,6 +147,10 @@ function reportTie() {
   game_page.classList.add("hidden");
   let text = document.querySelector("#win-container h2");
   text.textContent = "It's a Tie!";
+  leaderboard = document.getElementById("leaderboard");
+  leaderboard.classList.remove("hidden");
+  leaderboard2 = document.getElementById("leaderboard2");
+  leaderboard.classList.remove("hidden");
   result1 = "tie";
   result2 = "tie";
   console.log(result2);
@@ -155,10 +164,11 @@ function reportTie() {
       },
       body: JSON.stringify({ player1name: pn1, score1: result1, player2name: pn2, score2: result2 })
     });
-    const content = await rawResponse.json();
-
-    console.log(content);
+    const response = await rawResponse.json();
+    console.log(response);
+    displayLeaderboard(response.body);
   })();
+
 }
 
 // Updates win-container reporting a win
@@ -169,6 +179,10 @@ function reportWinner() {
   game_page.classList.add("hidden");
   let text = document.querySelector("#win-container h2");
   text.textContent = "Congrats! Player " + currentPlayer + "!";
+  leaderboard = document.getElementById("leaderboard");
+  leaderboard.classList.remove("hidden");
+  leaderboard2 = document.getElementById("leaderboard2");
+  leaderboard.classList.remove("hidden");
   let winner = currentPlayer;
   let loser = 1;
   result1 = "lose";
@@ -188,9 +202,46 @@ function reportWinner() {
       },
       body: JSON.stringify({ player1name: pn1, score1: result1, player2name: pn2, score2: result2 })
     });
-    const content = await rawResponse.json();
-    console.log(content);
+    const response = await rawResponse.json();
+    console.log(response);
+    displayLeaderboard(response.body);
   })();
+
+}
+
+function displayLeaderboard(leaderData) {
+  console.log("entered display data");
+  console.log(leaderData.length);
+  for (let i = 0; i < leaderData.length; i++) {
+
+    leaderboard2 = document.getElementById("leaderboard2")
+    leaderscore = leaderData[i];
+    console.log(leaderscore);
+    row = document.createElement("div");
+    row.classList.add("row");
+    leaderboard2.appendChild(row);
+
+    Object.entries(leaderscore).forEach(([key, value]) => {
+      console.log(key, value);
+      col1 = document.createElement("div");
+      col2 = document.createElement("div");
+      col1.innerHTML = key;
+      col2.innerHTML = value;
+      row.appendChild(col1);
+      row.appendChild(col2);
+      col1.classList.add("leaderCol");
+      col2.classList.add("leaderCol");
+    });
+    // for (let col = 0; col < 2; col++) {
+    //   let div = document.createElement("div");
+    //   div.innerHTML = leaderscore;
+    //   div.classList.add("space");
+    //   div.id = rowNum + "-" + col;
+    //   div.addEventListener("click", playerTurn);
+    //   row.appendChild(div);
+    // }
+  }
+
 }
 
 // Restarts and shows the gameboard to play again
@@ -203,6 +254,18 @@ function playAgain() {
   numTurn = 0;
   let turn = document.querySelector("span");
   turn.textContent = "Player 1";
+  pn1 = "";
+  pn2 = "";
+  while (pn1 == "" || pn1 == null) {
+    pn1 = prompt("What is Player 1's Name");
+  }
+  while (pn2 == "" || pn2 == null) {
+    pn2 = prompt("What is Player 2's Name");
+  }
+  leaderboard = document.getElementById("leaderboard");
+  leaderboard.classList.add("hidden");
+  leaderboard2 = document.getElementById("leaderboard2");
+  leaderboard.classList.add("hidden");
 }
 
 // Clears the gameboard

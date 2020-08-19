@@ -56,3 +56,25 @@ h1, h2, p{
 *{
   cursor: url("./img/uni.cur"), pointer;
 }
+
+/* #leaderboard2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* flex-direction: column; 
+} */
+
+.leaderCol{
+  /* margin: 200px, 2px, 50px, 20px; */
+  width: 400px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .leaderCol2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
