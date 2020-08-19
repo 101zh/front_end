@@ -1,0 +1,58 @@
+body{
+  font-family: 'Oswald', sans-serif;
+  background-color: cornsilk;
+}
+
+button{
+  background-color: lightblue;
+  padding: 10px;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+
+.space{
+  width: 300px;
+  height: 300px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
+.row{
+  display: flex;
+  justify-content: center
+}
+
+h1, h2, p{
+  text-align: center
+}
+
+.hidden{
+  display: none;
+}
+
+#win-container{
+  border: 3px solid black;
+  border-radius: 5px;
+  padding: 15px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#win-container button{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.token{
+  max-width: 200px;
+  display: flex;
+  justify-content: center;
+}
+
+.active {
+  text-align: left
+}

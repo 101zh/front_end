@@ -1,0 +1,191 @@
+.hello {
+  color: rgba(65, 174, 224, 0.87);
+  text-align: center;
+  font-family: 'Grenze Gotisch', cursive;
+ }
+
+
+ .title {
+  text-align: center;
+  font-size: 75px;
+  border-radius: 15px 50px;
+  background: #73AD21;
+  outline-color: burlywood;
+  outline: 10px;
+}
+
+ .about {
+   text-align: center;
+ }
+
+ .hi1 {
+  border-radius: 25px;
+  background: #73AD21;
+  padding: 20px;
+  width: 400px;
+  height: 30px;
+ }
+
+.hi2 {
+  border-radius: 25px;
+  background:#00fbff;
+  padding: 20px;
+  width: 200px;
+  height: 20px;
+}
+ .body {
+   background-color: aqua;
+   text-align: center;
+ }
+
+ .all {
+   background-color: antiquewhite;
+   text-align: center;
+ }
+
+.adventuretitle{
+  font-size: 30px;
+  color:black;
+  text-align:center;
+  padding:14px 25px;
+  text-decoration: none;
+  display: inline-block;
+  animation: step-start;
+}
+
+
+.memeslink {
+  font-size: 65;
+  color: black;
+  text-align: center;
+  background-color: #40E0D0;
+  color: black;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+
+.links1 {
+  font-size: 50px;
+  color: black;
+  text-align: center;
+  font-family: 'Grenze Gotisch', cursive;
+  text-shadow: 2px 2px blue;
+  
+  
+}
+
+
+.link2 {
+  font-size: 50px;
+  color: black;
+  text-align: center;
+  font-family: 'Grenze Gotisch', cursive;
+  text-shadow: 2px 2px blue;
+
+}
+
+
+.links3 {
+  font-size: 50px;
+  color: black;
+  text-align: center;
+  font-family: 'Grenze Gotisch', cursive;
+  text-shadow: 2px 2px blue;
+
+}
+
+
+.links4 {
+  font-size: 50px;
+  color: black;
+  text-align: center;
+  font-family: 'Grenze Gotisch', cursive;
+  text-shadow: 2px 2px blue;
+
+}
+
+
+.image1 {
+  display: block;
+  height: 500px;
+  width:  625px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.image2 {
+  display: block;
+  height: 450px;
+  width: 625px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.image3 {
+  display: block;
+  height: 250px;
+  width: 625px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.image4 {
+  display: block;
+  height: 350px;
+  width: 625px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hi2 {
+  text-align: center;
+}
+
+
+.links2 {
+  font-size: 75px;
+  color: black;
+  text-align: center;
+  font-family: 'Grenze Gotisch', cursive;
+
+}
+
+.important {
+  text-align: center;
+}
+
+.gameslink {
+  font-size: 65;
+  color: black;
+  text-align: center;
+  background-color: #40E0D0;
+  color: black;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.aboutlinks {
+  border-radius: 25px;
+  background: blueviolet;
+  padding: 20px;
+  width: 200px;
+  height: 75px;
+  color: black;
+}
+
+.ml4 {
+  position: relative;
+  font-weight: 900;
+  font-size: 4.5em;
+}
+.ml4 .letters {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  top: 0.3em;
+  right: 0;
+  opacity: 0; 
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Tic Tac Toe</title>
+  <ul>
+    <h2 class = "active"><a href = "index.html">Home</a></h2>
+</ul>
+  <meta name: "author" content:"Hunter">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+  <link href="./tic.css" rel="stylesheet"/>
+</head>
+<body>
+  <h1>Tic Tac Toe</h1>
+  <p>It's <span>Player 1</span>'s Turn</p>
+  <div id = "gameboard"> 
+    <div class= "row"></div>
+    <div class= "row"></div>
+    <div class= "row"></div>
+  </div>
+  <div id="win-container" class="hidden">
+    <h2>Hello</h2>
+    <Button id="again-btn" onclick="playAgain()">Play Again?</Button>
+  </div>
+  <script src="tic.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body class="all">
+    <script src="script.js"></script>
+      <h1 class="title" > 🥔 WELCOME TO THE OFFICIAL POTAT SITE!!!🥔 </h1>
+<center>
+    
+  <!-- input for changing background color -->
+  <label>Change your background color:</label><br>
+  <input type="text" id="my_color"/><br>
+  <input onclick="getColor()" type="button" value="change color"/>
+
+  <br>
+
+
+
+<script>
+
+  // function to get color you typed in and changing background color the color
+  function getColor() {
+    // get the variable color name that was typed in
+    var colorName = document.getElementById('my_color').value;
+    // check what color was inputted and change background color
+    if (colorName == 'red') {
+      document.body.style.backgroundColor = "#fdcece";
+
+    }
+    else if (colorName == 'orange') {
+      document.body.style.backgroundColor = "#c48a3d";
+
+    }
+    else if(colorName == "blue") {
+      document.body.style.backgroundColor = "blue";
+
+    }
+    else if(colorName == "green") {
+      document.body.style.backgroundColor = "lime";
+    }
+    else if(colorName == "yellow") {
+      document.body.style.backgroundColor = "yellow";
+    }
+    else if(colorName == "pink") {
+      document.body.style.backgroundColor = "pink";
+    }
+    else if(colorName == "purple") {
+      document.body.style.backgroundColor = "purple";
+    }
+    else if(colorName == "reset") {
+      document.body.style.backgroundColor = "antiquewhite"
+    }
+    else if(colorName == "potato") {
+      document.body.style.backgroundColor = "#fde8ce"
+    }
+    else {
+      alert('Pick a color that is available! Colors: red, orange, yellow, green, blue, purple, pink, potato, or reset (resets background color).')
+    }
+  }
+
+</script>
+
+    <h4 class="aboutlinks"> Here are some things to entertain yourself during quarintine (games and memes and stuff). </h4>
+
+    <a class="memeslink" href="./memes.html">🥔POTAT MEMES</a>
+
+     
+
+    <a class="memeslink" href="./adventure.html">🥔ESCAPE THE POTAT ROOM</a>
+
+
+    <a class="gameslink" href="./games.html"> 🥔 POTAT GAMES </a>
+
+
+    </center>
+    </body>
+  </body> 
+</html>
