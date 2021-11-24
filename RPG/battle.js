@@ -1,0 +1,3 @@
+retrieveInfo()
+checkInfo()
+check()
