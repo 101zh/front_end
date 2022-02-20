@@ -12,6 +12,7 @@ if (xp>=xpcontainer) {
     health+=statsgain
     defense+=statsgain
     strength+=statsgain
+    xpcontainer=parseInt(xpcontainer)
     console.log(xpcontainer)
     console.log(xp)
 }

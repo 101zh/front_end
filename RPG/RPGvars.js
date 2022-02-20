@@ -16,6 +16,8 @@ let currentmonsterhealth=100
 let monsterhealth=100
 let monsterdefense=15
 
+// let attackcontainer=0
+
 function setInfo() {
     sessionStorage.setItem("XPBAR", xpcontainer)
     sessionStorage.setItem("LVL", level)
@@ -105,6 +107,12 @@ function damage(input) {
     else {
         alert("Input is incorrect")
     }
+    if (damageRNG1<=0) {
+        damageRNG1=0
+    }
+    else if (damageRNG2<=0) {
+        damageRNG2=0
+    }
 }
 function check(){
     document.getElementById("currenthealth1").innerHTML = currentmonsterhealth;
@@ -117,16 +125,24 @@ function check(){
       var xploss=Math.floor((Math.random() * 0) + 4);
       alert("you have lost "+xploss+" xp points");
       currentmonsterhealth=monsterhealth
+      currenthealth=health
       xp-=xploss
       setInfo()
-      window.location.replace("file:///G:/hunter/my_java/RPG_java/RPG.html");
+      window.location.replace("RPG.html");
     }
     else if (currentmonsterhealth <= 0) {
       var xpgain =  Math.floor((Math.random() * 15) + 15);
       alert("you gained "+xpgain+" xp");
       xp+=xpgain
+      currentmonsterhealth=monsterhealth
+      currenthealth=health
+      var statsgain =  1
+      statsgain=parseInt(statsgain)
+      monsterhealth+=statsgain
+      monsterdefense+=statsgain
+      monsterstrength+=statsgain
       setInfo()
-      window.location.replace("file:///G:/hunter/my_java/RPG_java/RPG.html");
+      window.location.replace("RPG.html");
     }
     else {
   
@@ -144,14 +160,15 @@ function run() {
         alert("You got away safely, you lost "+xploss+" xp points");
         xp-=xploss
         setInfo()
-        window.location.replace("file:///G:/hunter/my_java/RPG_java/RPG.html")
+        window.location.replace("RPG.html")
     }
   
 }
+
+
 function attack() {
-    var attackcontainer = document.createElement("div");
-    document.body.appendChild(attackcontainer);
-    attackcontainer.innerHTML = '';
+    attackcontainer = document.createElement("div");
+    attackcontainer=document.getElementById("attackcontainer");
     var slash = document.createElement('button');
     slash.innerHTML = 'Slash';
     attackcontainer.appendChild(slash);
